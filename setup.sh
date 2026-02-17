@@ -8,17 +8,15 @@
 
 set -euo pipefail
 
-readonly THEME_REPO="https://github.com/Keyitdev/sddm-astronaut-theme.git"
-readonly THEME_NAME="sddm-astronaut-theme"
+readonly THEME_REPO="https://github.com/the-og-ago/sddm-eva.git"
+readonly THEME_NAME="sddm-eva"
 readonly THEMES_DIR="/usr/share/sddm/themes"
-readonly PATH_TO_GIT_CLONE="$HOME/$THEME_NAME"
+readonly PATH_TO_GIT_CLONE="$HOME/.config/$THEME_NAME"
 readonly METADATA="$THEMES_DIR/$THEME_NAME/metadata.desktop"
 readonly DATE=$(date +%s)
 
 readonly -a THEMES=(
-    "astronaut" "black_hole" "cyberpunk" "hyprland_kath" "jake_the_dog"
-    "japanese_aesthetic" "pixel_sakura" "pixel_sakura_static"
-    "post-apocalyptic_hacker" "purple_leaves"
+    "eva"
 )
 
 # Logging with gum fallback
