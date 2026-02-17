@@ -124,7 +124,7 @@ clone_repo() {
 
 # Install theme
 install_theme() {
-    local src="$HOME/$THEME_NAME"
+    local src="$PATH_TO_GIT_CLONE"
     local dst="$THEMES_DIR/$THEME_NAME"
 
     [[ ! -d "$src" ]] && { error "Clone repository first"; return 1;}
