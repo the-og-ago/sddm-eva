@@ -118,7 +118,7 @@ install_deps() {
 # Clone repository
 clone_repo() {
     [[ -d "$PATH_TO_GIT_CLONE" ]] && mv "$PATH_TO_GIT_CLONE" "${PATH_TO_GIT_CLONE}_$DATE"
-    spin "Cloning repository..." git clone -b master --depth 1 "$THEME_REPO" "$PATH_TO_GIT_CLONE"
+    spin "Cloning repository..." git clone --depth 1 "$THEME_REPO" "$PATH_TO_GIT_CLONE"
     info "Repository cloned to $PATH_TO_GIT_CLONE"
 }
 
@@ -170,7 +170,7 @@ enable_sddm() {
 preview_theme(){
     local log_file="/tmp/${THEME_NAME}_$DATE.txt"
     
-    sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/ > $log_file 2>&1 &
+    sddm-greeter-qt6 --test-mode --theme $THEMES_DIR/$THEME_NAME/ > $log_file 2>&1 &
     greeter_pid=$!
 
     # wait for ten seconds
